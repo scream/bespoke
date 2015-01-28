@@ -1,0 +1,167 @@
+.al-nav-wrap {
+  width: 100%;
+  background: #000000;
+}
+.al-nav-wrap .al-nav-area {
+  margin: 0 auto;
+  width: 980px;
+  min-height: 26px;
+}
+.al-nav-wrap .al-nav-area .al-nav-info .navbar {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 26px;
+  background: #000000;
+}
+.al-nav-wrap .al-nav-area .al-nav-info .navbar ul li {
+  border-right: 1px dashed #CCCCCC;
+}
+.al-nav-wrap .al-nav-area .al-nav-info .navbar ul li a {
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #CCCCCC;
+}
+.al-nav-wrap .al-nav-area .al-nav-info .navbar ul li a:hover {
+  color: #FFFFFF;
+}
+.al-logo-wrap {
+  width: 100%;
+}
+.al-logo-wrap .al-logo-area {
+  margin: 0 auto;
+  width: 980px;
+}
+.al-logo-wrap .al-logo-area .al-logo-info {
+  padding: 20px 0;
+  text-align: center;
+}
+.al-menu-wrap {
+  width: 100%;
+}
+.al-menu-wrap .al-menu-area {
+  margin: 0 auto;
+  width: 980px;
+}
+.al-menu-wrap .al-menu-area .al-menu-info .navbar {
+  background: #FFFFFF;
+  border: none;
+}
+.al-menu-wrap .al-menu-area .al-menu-info .navbar ul li a {
+  padding: 10px 25px;
+  font-size: 11px;
+  color: #000000;
+}
+.al-menu-wrap .al-menu-area .al-menu-info .navbar ul li a:hover {
+  font-weight: bold;
+}
+.al-menu-wrap .al-menu-area .al-menu-info .navbar ul li.search input {
+  padding: 5px;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid #000000;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+.al-menu-wrap .al-menu-area .al-menu-info .navbar ul li.search input.form-control {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.al-box-wrap {
+  width: 100%;
+  background-color: #F8F8F8;
+}
+.al-box-wrap .al-box-area {
+  margin: 0 auto;
+  width: 980px;
+}
+.al-box-wrap .al-box-area .al-box-info {
+  padding: 20px;
+}
+.al-box-wrap .al-box-area .al-box-info .box {
+  width: 290px;
+  height: 100px;
+  float: left;
+  background-color: #FFFFFF;
+  margin-left: 20px;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.175);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.175);
+}
+.al-box-wrap .al-box-area .al-box-info .box.one {
+  padding: 10px;
+}
+.al-box-wrap .al-box-area .al-box-info .box.one .title {
+  margin-bottom: 10px;
+}
+.al-box-wrap .al-box-area .al-box-info .box.one .type-text .email {
+  padding-left: 5px;
+  height: 30px;
+  border: 1px solid #000000;
+}
+.al-box-wrap .al-box-area .al-box-info .box.one .type-text .btn {
+  margin-left: 5px;
+  padding: 4px 10px;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+.al-box-wrap .al-box-area .al-box-info .box.two .media .media-body {
+  padding-top: 10px;
+}
+.al-box-wrap .al-box-area .al-box-info .box.two .media .media-heading {
+  font-size: 14px;
+  font-weight: bold;
+}
+.al-box-wrap .al-box-area .al-box-info .box.three .media .media-body {
+  padding-top: 10px;
+}
+.al-box-wrap .al-box-area .al-box-info .box.three .media .media-heading {
+  font-size: 14px;
+  font-weight: bold;
+}
+.al-display-wrap {
+  width: 100%;
+}
+.al-display-wrap .al-display-area {
+  margin: 0 auto;
+  width: 980px;
+}
+.al-display-wrap .al-display-area .al-display-info {
+  padding: 20px;
+}
+.al-display-wrap .al-display-area .al-display-info a {
+  display: block;
+}
+.al-display-wrap .al-display-area .al-display-info a span {
+  padding-left: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+.al-display-wrap .al-display-area .al-display-info a span:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: background-color ease-in 0.5s;
+  -o-transition: background-color ease-in 0.5s;
+  transition: background-color ease-in 0.5s;
+}
+.al-display-wrap .al-display-area .al-display-info .row.one .rel {
+  position: relative;
+}
+.al-display-wrap .al-display-area .al-display-info .row.one .abs {
+  position: absolute;
+}
+.al-display-wrap .al-display-area .al-display-info .row.one .left {
+  float: left;
+}
+.al-display-wrap .al-display-area .al-display-info .row.one .left .top {
+  margin-bottom: 32px;
+}
+.al-display-wrap .al-display-area .al-display-info .row.one .right {
+  float: right;
+}
