@@ -1,95 +1,5 @@
-@import "less/variables.less";
-@import "less/mixins.less";
 
-@al-content-width: 980px;
-.border-radius(@value){
-    border-radius: @value;
-    -webkit-border-radius: @value;
-    -moz-border-radius: @value;
-    -ms-border-radius: @value;
-    -o-border-radius: @value;
-}
-.al-nav-wrap{
-    width: 100%;
-    background: #000000;
-    .al-nav-area{
-        margin: 0 auto;
-        width: @al-content-width;
-        min-height: 26px;
-        .al-nav-info{
-            .navbar{
-                margin: 0 auto;
-                width: 100%;
-                min-height: 26px;
-                background: #000000;
-                ul{
-                    li{
-                        border-right: 1px dashed #CCCCCC;
-                        a{
-                            padding: 3px 10px;
-                            font-size: 11px;
-                            color: #CCCCCC;
-                            &:hover{
-                                color: #FFFFFF;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-.al-logo-wrap{
-    width: 100%;
-    .al-logo-area{
-        margin: 0 auto;
-        width: @al-content-width;
-        .al-logo-info{
-            padding: 20px 0;
-            text-align: center;
-        }
-    }
-}
-
-.al-menu-wrap{
-    width: 100%;
-    .al-menu-area{
-        margin: 0 auto;
-        width: @al-content-width;
-        .al-menu-info{
-            .navbar{
-                background: #FFFFFF;
-                border: none;
-                ul{
-                    li{
-                        a{
-                            padding: 10px 25px;
-                            font-size: 11px;
-                            color: #000000;
-                            &:hover{
-                                font-weight: bold;
-                            }
-                        }
-                        &.search{
-                            input{
-                                padding: 5px;
-                                border: none;
-                                .box-shadow(none);
-                                border-bottom: 1px solid #000000;
-                                color: rgba(0,0,0,0.5);
-                                font-style: italic;
-                                &.form-control{
-                                    .border-radius(0);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+@import "common.less";
 
 .al-box-wrap{
     width: 100%;
@@ -118,10 +28,13 @@
                             border: 1px solid #000000;
                         }
                         .btn{
-                            margin-left: 5px;
+                            margin-top: -3px;
+                            margin-left: 0px;
                             padding: 4px 10px;
                             background-color: #000000;
                             color: #FFFFFF;
+                            height: 30px;
+                            .border-radius(0);
                         }
                     }
                 }
@@ -152,17 +65,25 @@
     }
 }
 
+.al-slide-wrap{
+    width: 100%;
+    .al-footer-area{
+        .al-footer-info{
+
+        }
+    }
+}
+
 .al-display-wrap{
     width: 100%;
     .al-display-area{
         margin: 0 auto;
         width: @al-content-width;
         .al-display-info{
-            padding: 20px;
+            padding: 30px;
             a{  
                 display: block;
-                span{
-                    padding-left: 20px;
+                > div.abs{
                     top: 0;
                     left: 0;
                     right: 0;
@@ -174,17 +95,26 @@
                         background-color: rgba(0,0,0,0.5);
                         .transition(background-color ease-in 0.5s);
                     }
+                    .con{
+                        padding-left: 20px;
+                        height: 90px;
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -45px;
+                    }
                     
                 }
             }
             .row{
+                margin-bottom: 35px;
+                .rel{
+                    position: relative;
+                }
+                .abs{
+                    position: absolute;
+                }
                 &.one{
-                    .rel{
-                        position: relative;
-                    }
-                    .abs{
-                        position: absolute;
-                    }
+                    
                     .left{
                         float: left;
                         .top{
@@ -195,7 +125,49 @@
                         float: right;
                     }
                 }
+                &.two{
+                    .box{
+                        float: left;
+                        margin-left: 34px;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                &.three{
+                    .box{
+                        float: left;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                        &:last-child{
+                            float: right;
+                        };
+                    }
+                    div.title{
+                        margin-top: 10px;
+                        font-size: 22px;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                }
+                &.four{
+                    .box{
+                        a{
+                            .product-hover();
+                        }
+                        float: left;
+                        width: 212px;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                        margin-left: 32px;
+                        .product-init(0.8);
+                    }
+                }
             }
         }
     }
 }
+

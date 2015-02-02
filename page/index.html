@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Getting started &middot; Bootstrap</title>
+        <title>Index</title>
         <link type="text/css" rel="stylesheet" href="/allure/css/bootstrap/bootstrap.css">
-        <link type="text/css" rel="stylesheet" href="/allure/css/index.css">
-        <script type="text/javascript"></script>
+        <link type="text/less" rel="stylesheet" href="/allure/css/page/index.less">
+        <script type="text/javascript" src="/allure/js/less/less.min.js"></script>
     </head>
     <body>
         <!-- nav start  -->
-        <div class="al-nav-wrap">
+        <div class="al-nav-wrap navbar-fixed-top">
             <div class="al-nav-area">
                 <div class="al-nav-info">
-                    <nav class="navbar navbar-default navbar-fixed-top">
+                    <nav class="navbar navbar-default">
                       <div class="container-fluid navbar-right">
                         <div class="collapse navbar-collapse">
                           <ul class="nav navbar-nav">
@@ -44,15 +44,45 @@
                     <nav class="navbar navbar-default">
                       <div class="container-fluid">
                         <div class="collapse navbar-collapse">
-                          <ul class="nav navbar-nav">
-                            <li><a href="#">FURNISHINGS</a></li>
+                          <ul class="menu-ul-list nav navbar-nav">
+                            <li>
+                                <a href="#">FURNISHINGS</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/categories/desks">Desks</a></li>
+                                    <li><a href="/categories/desks">Seating</a></li>
+                                    <li><a href="/categories/desks">Tables</a></li>
+                                    <li><a href="/categories/desks">Lighting</a></li>
+                                    <li><a href="/categories/desks">Tables</a></li>
+                                    <li><a href="/categories/desks">Casegoods</a></li>
+                                    <li><a href="/categories/desks">Soft Goods</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">LEISURE</a></li>
-                            <li><a href="#">GIFTS</a></li>
+                            <li>
+                                <a href="#">GIFTS</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/gifts">Give a Gift</a></li>
+                                    <li><a href="/gifted">Redeem a Gift</a></li>
+                                    <li><a href="/categories/gifts">View Gifts</a></li>
+                                    <li><a href="/neiman_marcus">Fantasy Gift 2013</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">ARTISTS</a></li>
                             <li><a href="#">VIDEO</a></li>
                             <li><a href="#">PRESS</a></li>
-                            <li><a href="#">COMPANY</a></li>
-                            <li class="search"><input type="text" class="form-control" placeholder="Search"/></li>
+                            <li>
+                                <a href="#">COMPANY</a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/gifts">Give a Gift</a></li>
+                                    <li><a href="/gifted">Redeem a Gift</a></li>
+                                    <li><a href="/categories/gifts">View Gifts</a></li>
+                                    <li><a href="/neiman_marcus">Fantasy Gift 2013</a></li>
+                                </ul>
+                            </li>
+                            <li class="search">
+                                <input type="text" class="form-control" placeholder="Search"/>
+                                <button type="submit" class="glyphicon glyphicon-search"></button>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -103,45 +133,298 @@
                 </div>
             </div>
         </div>
-            
         <!-- three box end -->
 
+        <!-- slide start-->
+        <div class="al-slide-wrap">
+            <div class="al-slide-area">
+                <div class="al-slide-info">
+                    <div id="carousel-generic" class="al-carousel carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-generic" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="/allure/imgs/chair-big-5.jpg" data-holder-rendered="true">
+                                <div class="carousel-caption">
+                                    <h3>MEXICAN FOLK ART1</h3>
+                                    <p>Vibrant and colorful artisan Elissa Medina captures the spirit of Mexican folk art. </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="/allure/imgs/chair-big-6.jpg" data-holder-rendered="true">
+                                <div class="carousel-caption">
+                                    <h3>MEXICAN FOLK ART2</h3>
+                                    <p>Vibrant and colorful artisan Elissa Medina captures the spirit of Mexican folk art. </p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="/allure/imgs/chair-big-7.jpg" data-holder-rendered="true">
+                                <div class="carousel-caption">
+                                    <h3>MEXICAN FOLK ART3</h3>
+                                    <p>Vibrant and colorful artisan Elissa Medina captures the spirit of Mexican folk art. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--slide end-->
+
+        <!-- display start-->
         <div class="al-display-wrap">
             <div class="al-display-area">
                 <div class="al-display-info">
+                    <!-- one row start-->
                     <div class="row one">
                         <div class="left">
                             <div class="top">
                                 <a href="#" class="rel">
-                                    <span class="abs">
-                                        <h3>SEDUCTIVE SEATING </h3>
-                                        <h5>Discover our unique collection </h5>
-                                    </span>
+                                    <div class="abs">
+                                        <div class="con">
+                                            <h3>SEDUCTIVE SEATING </h3>
+                                            <h5>Discover our unique collection </h5>
+                                        </div>
+                                    </div>
                                     <img class="media-object" src="/allure/imgs/chair-middle-1.jpg"/>
                                 </a>
                             </div>
                             <div class="bottom">
                                 <a href="#"  class="rel">
-                                    <span class="abs">
-                                        <h3>SEDUCTIVE SEATING </h3>
-                                        <h5>Discover our unique collection </h5>
-                                    </span>
+                                    <div class="abs">
+                                        <div class="con">
+                                            <h3>SEDUCTIVE SEATING </h3>
+                                            <h5>Discover our unique collection </h5>
+                                        </div>
+                                    </div>
                                     <img class="media-object" src="/allure/imgs/chair-middle-2.jpg"/>
                                 </a>
                             </div>
                         </div>
                         <div class="right">
                             <a href="#" class="rel">
-                                    <span class="abs">
-                                        <h3>SEDUCTIVE SEATING </h3>
-                                        <h5>Discover our unique collection </h5>
-                                    </span>
+                                    <div class="abs">
+                                        <div class="con">
+                                            <h3>SEDUCTIVE SEATING </h3>
+                                            <h5>Discover our unique collection </h5>
+                                        </div>
+                                    </div>
                                     <img class="media-object" src="/allure/imgs/chair-big-1.jpg"/>
                             </a>
                         </div>
                     </div>
+                    <!-- one row end-->
+
+                    <!-- one row start-->
+                    <div class="row two"> 
+                        <div class="box">
+                            <a href="#" class="rel">
+                                <div class="abs">
+                                    <div class="con">
+                                        <h3>SEDUCTIVE SEATING </h3>
+                                        <h5>Discover our unique collection </h5>
+                                    </div>
+                                </div>
+                                <img class="media-object" src="/allure/imgs/chair-middle-3.jpg"/>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <a href="#" class="rel">
+                                <div class="abs">
+                                    <div class="con">
+                                        <h3>SEDUCTIVE SEATING </h3>
+                                        <h5>Discover our unique collection </h5>
+                                    </div>
+                                </div>
+                                <img class="media-object" src="/allure/imgs/chair-middle-4.jpg"/>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <a href="#" class="rel">
+                                <div class="abs">
+                                    <div class="con">
+                                        <h3>SEDUCTIVE SEATING </h3>
+                                        <h5>Discover our unique collection </h5>
+                                    </div>
+                                </div>
+                                <img class="media-object" src="/allure/imgs/chair-middle-5.jpg"/>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- one row end-->
+
+                    <!-- one row start-->
+                    <div class="row three">
+                        <div class="clearfix">
+                            <div class="box">
+                                <a href="#" class="rel">
+                                    <div class="abs">
+                                        <div class="con">
+                                            <h3>SEDUCTIVE SEATING </h3>
+                                            <h5>Discover our unique collection </h5>
+                                        </div>
+                                    </div>
+                                    <img class="media-object" src="/allure/imgs/chair-big-2.jpg"/>
+                                </a>
+                            </div>
+                            <div class="box">
+                                <a href="#" class="rel">
+                                    <div class="abs">
+                                        <div class="con">
+                                            <h3>SEDUCTIVE SEATING </h3>
+                                            <h5>Discover our unique collection </h5>
+                                        </div>
+                                    </div>
+                                    <img class="media-object" src="/allure/imgs/chair-big-3.jpg"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="title">Be:Gifted - The Perfect Bespoke Gift For...</div>
+                    </div>
+                    <!-- one row end-->
+
+                    <!-- one row start-->
+                    <div class="row four">
+                        <div class="box">
+                            <a href="#">
+                                <div class="img"><img class="media-object" src="/allure/imgs/chair-small-3.jpg"/></div>
+                                <div class="text">Your Sushi Enthusiast $74</div>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <a href="#">
+                                <div class="img"><img class="media-object" src="/allure/imgs/chair-small-4.jpg"/></div>
+                                <div class="text">Brozehandlebutterdish A Culinary Connoisseur $110</div>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <a href="#">
+                                <div class="img"><img class="media-object" src="/allure/imgs/chair-small-5.jpg"/></div>
+                                <div class="text"> Desertso litudemartin $130</div>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <a href="#">
+                                <div class="img"><img class="media-object" src="/allure/imgs/chair-small-6.jpg"/></div>
+                                <div class="text">Gift Card </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- one row end-->
+
                 </div>
             </div>            
         </div>
+        <!-- display end-->
+        
+        <!-- footer start-->
+        <div class="al-footer-wrap">
+            <div class="al-footer-area">
+                <div class="al-footer-info">
+                    <div class="under-line"></div>
+                    <div class="footer-list">
+                        <div class="box one">
+                            <div class="title">ABOUT US</div>
+                            <ul>
+                                <li><a href="#">COMPANY INFO</a></li>
+                                <li><a href="#">TERMS & CONDITIONS</a></li>
+                                <li><a href="#">PRIVACY POLICY</a></li>
+                                <li><a href="#">SALES POLICY</a></li>
+                                <li><a href="#">CONTACT</a></li>
+                            </ul>
+                        </div>
+                        <div class="box two">
+                            <div class="title">SIGN UP FOR NEWSLETTER</div>
+                            <div class="btn">
+                                <input type="text" class="form-control" placeholder="Please enter your email"/>
+                                <input type="button" value="Go"/>
+                            </div>
+                        </div>
+                        <div class="box three">
+                            <div class="title">SHARE</div>
+                            <ul>
+                                <li><a href="#" class="o1"></a></li>
+                                <li><a href="#" class="o2"></a></li>
+                                <li><a href="#" class="o3"></a></li>
+                            </ul>
+                        </div>
+                        <div class="box four">
+                            <div class="title">LET US HELP YOU</div>
+                            <div>
+                                <a href="#">BECKANDCALL@BESPOKEGLOBAL.COM (+1) 212.537.0112</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer end-->
     </body>
+<script type="text/javascript">
+    var require = (function () {
+
+        return {
+            "callback": function () {
+
+                var deps = ["require", "jquery"];
+
+                require.config({
+                    "waitSeconds": 0,
+
+                    "baseUrl": "/allure",
+
+                    "packages": [
+                        {
+                            "name": "jquery",
+                            "location": "js/lib/jquery",
+                            "main": "jquery-1.9.1"
+                        },
+                        {
+                            "name": "bootstrap",
+                            "location": "js/plugin/bootstrap",
+                            "main": "bootstrap"
+                        },
+                        {
+                            "name": "alHome",
+                            "location": "js/app/index",
+                            "main": "main"
+                        }
+                    ],
+
+                    "shim": {
+                        "bootstrap": {
+                            deps: ["jquery"],
+                            init: function($) {
+                                return $;
+                            }
+                        }
+                    },
+
+                    "deps": deps,
+
+                    "callback": function (localRequire) {
+                        localRequire(["jquery", "alHome"], function (jQuery, alHome) {
+                            jQuery(document.body).ready(
+                                function(){
+                                    new alHome();
+                            });
+                        });
+                    }
+                });
+            }
+        };
+    })();
+</script>
+<script type="text/javascript" src="/allure/js/lib/requirejs/require.js"></script>
 </html>

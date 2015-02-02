@@ -1,0 +1,54 @@
+@import "../less/variables.less";
+@import "../less/mixins.less";
+
+body{
+	font-size: 12px;
+}
+@al-content-width: 980px;
+.border-radius(@value){
+    border-radius: @value;
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    -ms-border-radius: @value;
+    -o-border-radius: @value;
+}
+
+@import "header.less";
+@import "footer.less";
+
+.ul-com(){
+	ul{
+		list-style-type: none;
+		padding-left: 10px;
+		li{
+			a{
+				color: #000000;
+			}
+		}
+	}
+}
+.product-hover(){
+	&:hover{
+	    text-decoration: none;
+	    .text{
+	        color: #626366;
+	        .transition(color ease-in 0.5s);
+	    }
+	    .img{
+	        opacity: 1;
+	        .transition(opacity ease-in 0.5s);
+	    }
+	}
+}
+.product-init(@value){
+	.img{
+        opacity: @value;
+        cursor: pointer;
+    }
+    .text{
+        padding: 5px;
+        text-align: center;
+        cursor: pointer;
+        color: #37383A;
+    }
+}
