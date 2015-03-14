@@ -1,6 +1,9 @@
 define([
     'jquery',
-    'bootstrap'
+    'angular',
+    'bootstrap',
+    'angularjs-bootstrap',
+    'shopCar'
 ], function($) {
     "use strict";
 
@@ -31,6 +34,10 @@ define([
             'wrap': true
         })
     };
+
+    var homeApp = angular.module('homeModule', ['ui.bootstrap', 'shopCarModule']);
+
+    angular.bootstrap(document, ['homeModule']);
 
     return alHome;
 

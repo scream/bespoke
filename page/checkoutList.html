@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>product detail</title>
+        <title>checkout list order</title>
         <link type="text/css" rel="stylesheet" href="/allure/css/bootstrap/bootstrap.css">
-        <link type="text/css" rel="stylesheet" href="/allure/css/page/productDetail.css">
+        <link type="text/css" rel="stylesheet" href="/allure/css/page/checkoutList.css">
     </head>
     <body>
         <!-- nav start  -->
@@ -63,6 +63,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </li>
                           </ul>
                         </div>
@@ -139,100 +140,51 @@
         <!-- menu end -->
 
         <!-- register start-->
-        	<div class="al-prodcut-detail-wrap" ng-controller="AddProductToShopCar"  data-product-id="123" data-product-name="APHRODITE ROCKING LOUNGE CHAIR" data-product-price="12345" data-product-img-url="/allure/imgs/detail-big-1.jpg">
-        		<div class="al-prodcut-detail-area">
-        			<div class="al-prodcut-detail-info">
-                        <div class="detail">
-                            <div class="product">
-                                <div class="left">
-                                    <img src="/allure/imgs/detail-big-1.jpg"/>
+        	<div class="al-checkout-wrap" ng-controller="ShopCarController">
+        		<div class="al-checkout-area">
+        			<div class="al-checkout-info">
+                        <h6><span class="glyphicon glyphicon-th-list"></span>Checkout List</h6>
+                        <div class="shop-car-list" ng:show="shopCars.length > 0">
+
+                            <div class="al-table">
+                                <div class="al-row">
+                                    <div class="img">
+                                        Product
+                                    </div>
+                                    <div class="number">
+                                        Number
+                                    </div>
+                                    <div class="price">
+                                        <span>Price</span>
+                                    </div>
+                                    <div class="delete"></div>
                                 </div>
-                                <div class="right">
-                                    <h3 ng-click="alert(11);">MICHAEL COFFEY</h3>
-                                    <p>APHRODITE ROCKING LOUNGE CHAIR</p>
-                                    <div class="line clearfix">
-                                        <div>Brand Name:</div>
-                                        <div>iphone</div>
+                                <div class="al-row" ng:repeat="product in shopCars">
+                                    <div class="img">
+                                        <img src="{{product.imgUrl}}" width="100" height="100"/>
+                                        <span>{{product.name}}</span>
                                     </div>
-                                    <div class="line clearfix">
-                                        <div>Product Id:</div>
-                                        <div>12345</div>
+                                    <div class="number">
+                                        <input type="text" ng-keyup="validate(product.number)" ng-model="product.number" class="form-control" value="{{product.number}}" />
                                     </div>
-                                    <div class="line clearfix">
-                                        <div>Prodcut name:</div>
-                                        <div>iphone6</div>
+                                    <div class="price">
+                                        <span>{{product.price * product.number}}</span>
                                     </div>
-                                    
-                                    <div class="line clearfix">
-                                        <div>Product address:</div>
-                                        <div>Made in China</div>
-                                    </div>
-
-                                    <div class="line clearfix">
-                                        <div>Number:</div>
-                                        <div><input type="text" ng-model="product.number" class="form-control number"></div>
-                                    </div>
-
-                                    <div class="line price clearfix">
-                                        <div>Price:</div>
-                                        <div>12345</div>
-                                    </div>
-
-                                    <div class="add-car">
-                                        <button href="#" class="btn btn-primary add-pro" role="button" ng-click="addShopCar()">Add to car</button>
+                                    <div class="delete">
+                                        <span class="glyphicon glyphicon-remove" ng-click="delete($index)"></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="similar">
-                                
+                            <div class="product-sum">
+                                <span class="title">Total Money:</span><span class="total">${{sum()}}</span>
+                            </div>
+                            <div class="checkout-list-btn-area">
+                                <button href="#" class="btn btn-primary" role="button">Check out</button>
                             </div>
                         </div>
-
-                        <div class="product-introduction">
-                            <h3>Description</h3>
-                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                              <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingOne">
-                                  <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                      Description 1
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                  <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingTwo">
-                                  <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                      Description 2
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                  <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingThree">
-                                  <h4 class="panel-title">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                      Description 3
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                  <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                  </div>
-                                </div>
-                              </div>
+                        <div class="shop-car-empty" ng:show="shopCars.length === 0">
+                            <div class="alert alert-info" role="alert">
+                                Your shopcars is empty, please go to product list to order.
                             </div>
                         </div>
         			</div>
@@ -328,13 +280,8 @@
                             "main": "main"
                         },
                         {
-                            "name": "addProduct",
-                            "location": "js/app/productDetail",
-                            "main": "addProductToShopCar"
-                        },
-                        {
-                            "name": "productDetail",
-                            "location": "js/app/productDetail",
+                            "name": "checkoutList",
+                            "location": "js/app/checkoutList",
                             "main": "main"
                         }
                     ],
@@ -354,10 +301,10 @@
                     "deps": deps,
 
                     "callback": function (localRequire) {
-                        localRequire(["jquery", "productDetail"], function (jQuery, ProductDetail) {
+                        localRequire(["jquery", "checkoutList"], function (jQuery, CheckoutList) {
                             jQuery(document.body).ready(
                                 function(){
-                                    new ProductDetail();
+                                    new CheckoutList();
                             });
                         });
                     }

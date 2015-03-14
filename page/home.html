@@ -3,8 +3,7 @@
     <head>
         <title>Index</title>
         <link type="text/css" rel="stylesheet" href="/allure/css/bootstrap/bootstrap.css">
-        <link type="text/less" rel="stylesheet" href="/allure/css/page/index.less">
-        <script type="text/javascript" src="/allure/js/less/less.min.js"></script>
+        <link type="text/less" rel="stylesheet" href="/allure/css/page/index.css">
     </head>
     <body>
         <!-- nav start  -->
@@ -18,6 +17,55 @@
                             <li><a href="#">My Projects</a></li>
                             <li><a href="#">Trade</a></li>
                             <li><a href="#">Login</a></li>
+
+                            <li class="shop-car dropdown" ng-controller="ShopCarController">
+                                <a href="#" class="dropdown-toggle" ng-disabled="disabled">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    <span class="number">{{productType.typeNum}}</span>
+                                </a>
+                                <div class="shop-car-list dropdown-menu" role="menu" ng-click="stopPro($event)">
+                                    <div class="product-list" ng:show="shopCars.length > 0">
+                                        <div class="al-table">
+                                            <div class="al-row">
+                                                <div class="img">
+                                                    Product
+                                                </div>
+                                                <div class="number">
+                                                    Number
+                                                </div>
+                                                <div class="price">
+                                                    <span>Price</span>
+                                                </div>
+                                                <div class="delete"></div>
+                                            </div>
+                                            <div class="al-row" ng:repeat="product in shopCars">
+                                                <div class="img">
+                                                    <img src="{{product.imgUrl}}" width="100" height="100"/>
+                                                </div>
+                                                <div class="number">
+                                                    <input type="text" ng-model="product.number" class="form-control" value="{{product.number}}" />
+                                                </div>
+                                                <div class="price">
+                                                    <span>{{product.price * product.number}}</span>
+                                                </div>
+                                                <div class="delete">
+                                                    <span class="glyphicon glyphicon-remove" ng-click="delete($index)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-sum">
+                                            <span class="title">Total Money:</span><span class="total">${{sum()}}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="shop-car-empty" ng:show="shopCars.length === 0">
+                                        <div class="alert alert-info" role="alert">
+                                            Your shopcars is empty, please go to product list to order.
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
                           </ul>
                         </div>
                       </div>
@@ -391,9 +439,29 @@
                             "main": "jquery-1.9.1"
                         },
                         {
+                            "name": "angular",
+                            "location": "js/lib/angularjs",
+                            "main": "angular"
+                        },
+                        {
+                            "name": "angularjs-bootstrap",
+                            "location": "js/lib/angularjs-bootstrap",
+                            "main": "ui-bootstrap-tpls"
+                        },
+                        {
                             "name": "bootstrap",
                             "location": "js/plugin/bootstrap",
                             "main": "bootstrap"
+                        },
+                        {
+                            "name": "jquery-cookie",
+                            "location": "js/plugin/jquery-cookie",
+                            "main": "jquery-cookie"
+                        },
+                        {
+                            "name": "shopCar",
+                            "location": "js/app/shopCar",
+                            "main": "main"
                         },
                         {
                             "name": "alHome",
@@ -408,6 +476,9 @@
                             init: function($) {
                                 return $;
                             }
+                        },
+                        "angularjs-bootstrap": {
+                            deps: ["angular"]
                         }
                     },
 

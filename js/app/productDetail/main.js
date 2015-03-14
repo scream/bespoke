@@ -1,6 +1,11 @@
 define([
     'jquery',
-    'bootstrap'
+    'jquery-cookie',
+    'angular',
+    'bootstrap',
+    'angularjs-bootstrap',
+    'shopCar',
+    'addProduct'
 ], function($) {
     "use strict";
 
@@ -18,6 +23,9 @@ define([
         $('.collapse').collapse()
     };
 
-    return prodcutDetail;
+    var productDetailApp = angular.module('productDetailModule', ['ui.bootstrap', 'shopCarModule', 'addProductModule']);
 
+    angular.bootstrap(document, ['productDetailModule']);
+
+    return prodcutDetail;
 });

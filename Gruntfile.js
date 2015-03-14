@@ -4,14 +4,14 @@ module.exports = function(grunt) {
     less: {
       dev: {
         files: {
-          "css/index.css": "css/index.less"
+          "css/page/checkoutList.css": "css/page/checkoutList.less"
         }
       }
     },
     watch: {
       less: {
         // We watch and compile sass files as normal but don't live reload here
-        files: ['css/index.less'],
+        files: ['css/page/checkoutList.less'],
         tasks: ['less']
       }
     }

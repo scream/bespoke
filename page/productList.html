@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="productListApp">
     <head>
         <title>Leisure</title>
         <link type="text/css" rel="stylesheet" href="/allure/css/bootstrap/bootstrap.css">
-        <link type="text/less" rel="stylesheet" href="/allure/css/page/leisure.less">
+        <link type="text/less" rel="stylesheet" href="/allure/css/page/productList.less">
         <script type="text/javascript" src="/allure/js/less/less.min.js"></script>
+        <script type="text/javascript" src="/allure/js/lib/angularjs/angular.js"></script>
+        <script type="text/javascript" src="/allure/js/lib/angularjs-route/angularjs-route.js"></script>
+        <script type="text/javascript" src="/allure/js/lib/angularjs-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script type="text/javascript" src="/allure/js/app/productList/main.js"></script>
     </head>
     <body>
         <!-- nav start  -->
@@ -18,6 +22,12 @@
                             <li><a href="#">My Projects</a></li>
                             <li><a href="#">Trade</a></li>
                             <li><a href="#">Login</a></li>
+                            <li class="shopcar">
+                                <a href="#">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                    <span class="number">0</span>
+                                </a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -162,69 +172,25 @@
 								</div>				
         					</div>
 
-        					<div class="box list">
+        					<div class="box list" ng-controller="ListController">
         						<div class="paging">
-        							<div class="o1">
-        								<select>
-        									<option>Sort by ....</option>
-        								</select>
-        							</div>
-        							<div class="o2">
-        								<select>
-        									<option>Sort by ....</option>
-        								</select>
-        							</div>
-        							<div class="o3">
-        								<select>
-        									<option>Sort by ....</option>
-        								</select>
-        							</div>
-        						</div>
+                                    <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()" direction-links="false"></pagination>
+                                </div>
 
-        						<div class="display-products">
-        							<ul>
-        								<li><a href="#">
-        									<div class="img"><img src="/allure/imgs/product-1.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-2.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-3.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        							</ul>
-        							<ul>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-1.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-2.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-3.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        							</ul>
-        							<ul>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-1.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-2.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        								<li><a href="">
-        									<div class="img"><img src="/allure/imgs/product-3.jpg"/></div>
-        									<div class="text">MICHAEL COFFEYTete-A-Tete$140,000</div></a>
-        								</li>
-        							</ul>
-        						</div>
+                                <div class="display-products">
+                                    <ul>
+                                        <li ng-repeat="item in details">
+                                        <a href="#">
+                                            <div class="img"><img src="{{ item.imgUrl }}"/></div>
+                                            <div class="text">
+                                                <div class="name">{{ item.name }}</div>
+                                                <div class="price">{{ item.price }}</div>
+                                            </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </div>
         					</div>
         				</div>
         			</div>
@@ -275,60 +241,4 @@
         </div>
         <!-- footer end-->
     </body>
-<script type="text/javascript">
-    var require = (function () {
-
-        return {
-            "callback": function () {
-
-                var deps = ["require", "jquery"];
-
-                require.config({
-                    "waitSeconds": 0,
-
-                    "baseUrl": "/allure",
-
-                    "packages": [
-                        {
-                            "name": "jquery",
-                            "location": "js/lib/jquery",
-                            "main": "jquery-1.9.1"
-                        },
-                        {
-                            "name": "bootstrap",
-                            "location": "js/plugin/bootstrap",
-                            "main": "bootstrap"
-                        },
-                        {
-                            "name": "alHome",
-                            "location": "js/app/index",
-                            "main": "main"
-                        }
-                    ],
-
-                    "shim": {
-                        "bootstrap": {
-                            deps: ["jquery"],
-                            init: function($) {
-                                return $;
-                            }
-                        }
-                    },
-
-                    "deps": deps,
-
-                    "callback": function (localRequire) {
-                        localRequire(["jquery", "alHome"], function (jQuery, alHome) {
-                            jQuery(document.body).ready(
-                                function(){
-                                    new alHome();
-                            });
-                        });
-                    }
-                });
-            }
-        };
-    })();
-</script>
-<script type="text/javascript" src="/allure/js/lib/requirejs/require.js"></script>
 </html>

@@ -1,3 +1,17 @@
+@import "../less/variables.less";
+@import "../less/mixins.less";
+
+body{
+    font-size: 12px;
+}
+@al-content-width: 980px;
+.border-radius(@value){
+    border-radius: @value;
+    -webkit-border-radius: @value;
+    -moz-border-radius: @value;
+    -ms-border-radius: @value;
+    -o-border-radius: @value;
+}
 
 .al-nav-wrap{
     width: 100%;
@@ -12,7 +26,8 @@
             .navbar{
                 margin: 0 auto;
                 width: inherit;
-                min-height: 26px;
+                height: 26px !important;
+                min-height: 26px !important;
                 background: #000000;
                 border: 0;
                 ul{
@@ -26,6 +41,7 @@
                                 color: #FFFFFF;
                             }
                         }
+                        
                     }
                 }
             }
@@ -98,5 +114,29 @@
                 }
             }
         }
+    }
+}
+
+.shop-car{
+    position: relative;
+    &.dropdown{
+        a{
+            background: #000000 !important;
+        }
+    }
+    a{
+        font-size: 14px;
+    }
+    .shop-car-list{
+        position: absolute;
+        top: 28px;
+        z-index: 100;
+        width: 300px;
+        margin-left: -90px;
+        background-color: #ffffff;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        padding: 10px;
     }
 }
