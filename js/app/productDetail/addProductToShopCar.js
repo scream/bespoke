@@ -1,8 +1,7 @@
 define(['jquery', 'angular', 'jquery-cookie'], function($){
     $.cookie.json = true;
-    var addProductApp = angular.module('addProductModule', ['ui.bootstrap']);
-    addProductApp.controller('AddProductToShopCar', function ($scope, $attrs) {
 
+    var addProductController = function($scope, $attrs){
         $scope.product = {
             id: $attrs.productId,
             name: $attrs.productName,
@@ -13,5 +12,6 @@ define(['jquery', 'angular', 'jquery-cookie'], function($){
         $scope.addShopCar = function(){
             $.cookie('product', $scope.product, { expires: 7 });
         };
-    });
+    };
+    return addProductController;
 });

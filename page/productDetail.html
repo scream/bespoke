@@ -20,7 +20,7 @@
                             <li class="shop-car dropdown" ng-controller="ShopCarController">
                                 <a href="#" class="dropdown-toggle" ng-disabled="disabled">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    <span class="number">{{productType.typeNum}}</span>
+                                    <span class="number" ng-cloak>{{productType.typeNum}}</span>
                                 </a>
                                 <div class="shop-car-list dropdown-menu" role="menu" ng-click="stopPro($event)">
                                     <div class="product-list" ng:show="shopCars.length > 0">
@@ -91,9 +91,9 @@
                       <div class="container-fluid">
                         <div class="collapse navbar-collapse">
                           <ul class="menu-ul-list nav navbar-nav">
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">FURNISHINGS</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/categories/desks">Desks</a></li>
                                     <li><a href="/categories/desks">Seating</a></li>
                                     <li><a href="/categories/desks">Tables</a></li>
@@ -104,9 +104,9 @@
                                 </ul>
                             </li>
                             <li><a href="#">LEISURE</a></li>
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">GIFTS</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/gifts">Give a Gift</a></li>
                                     <li><a href="/gifted">Redeem a Gift</a></li>
                                     <li><a href="/categories/gifts">View Gifts</a></li>
@@ -116,9 +116,9 @@
                             <li><a href="#">ARTISTS</a></li>
                             <li><a href="#">VIDEO</a></li>
                             <li><a href="#">PRESS</a></li>
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">COMPANY</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/gifts">Give a Gift</a></li>
                                     <li><a href="/gifted">Redeem a Gift</a></li>
                                     <li><a href="/categories/gifts">View Gifts</a></li>
@@ -139,7 +139,7 @@
         <!-- menu end -->
 
         <!-- register start-->
-        	<div class="al-prodcut-detail-wrap" ng-controller="AddProductToShopCar"  data-product-id="123" data-product-name="APHRODITE ROCKING LOUNGE CHAIR" data-product-price="12345" data-product-img-url="/allure/imgs/detail-big-1.jpg">
+        	<div class="al-prodcut-detail-wrap" ng-controller="AddProductController"  data-product-id="123" data-product-name="APHRODITE ROCKING LOUNGE CHAIR" data-product-price="12345" data-product-img-url="/allure/imgs/detail-big-1.jpg">
         		<div class="al-prodcut-detail-area">
         			<div class="al-prodcut-detail-info">
                         <div class="detail">
@@ -148,7 +148,7 @@
                                     <img src="/allure/imgs/detail-big-1.jpg"/>
                                 </div>
                                 <div class="right">
-                                    <h3 ng-click="alert(11);">MICHAEL COFFEY</h3>
+                                    <h3>MICHAEL COFFEY</h3>
                                     <p>APHRODITE ROCKING LOUNGE CHAIR</p>
                                     <div class="line clearfix">
                                         <div>Brand Name:</div>
@@ -325,6 +325,11 @@
                         {
                             "name": "shopCar",
                             "location": "js/app/shopCar",
+                            "main": "main"
+                        },
+                        {
+                            "name": "header",
+                            "location": "js/app/header",
                             "main": "main"
                         },
                         {

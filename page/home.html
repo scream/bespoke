@@ -21,7 +21,7 @@
                             <li class="shop-car dropdown" ng-controller="ShopCarController">
                                 <a href="#" class="dropdown-toggle" ng-disabled="disabled">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    <span class="number">{{productType.typeNum}}</span>
+                                    <span class="number" ng-cloak>{{productType.typeNum}}</span>
                                 </a>
                                 <div class="shop-car-list dropdown-menu" role="menu" ng-click="stopPro($event)">
                                     <div class="product-list" ng:show="shopCars.length > 0">
@@ -93,9 +93,9 @@
                       <div class="container-fluid">
                         <div class="collapse navbar-collapse">
                           <ul class="menu-ul-list nav navbar-nav">
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">FURNISHINGS</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/categories/desks">Desks</a></li>
                                     <li><a href="/categories/desks">Seating</a></li>
                                     <li><a href="/categories/desks">Tables</a></li>
@@ -106,9 +106,9 @@
                                 </ul>
                             </li>
                             <li><a href="#">LEISURE</a></li>
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">GIFTS</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/gifts">Give a Gift</a></li>
                                     <li><a href="/gifted">Redeem a Gift</a></li>
                                     <li><a href="/categories/gifts">View Gifts</a></li>
@@ -118,9 +118,9 @@
                             <li><a href="#">ARTISTS</a></li>
                             <li><a href="#">VIDEO</a></li>
                             <li><a href="#">PRESS</a></li>
-                            <li>
+                            <li ng-controller="ShowSubController" ng-class="isShowSubMenu ? 'open': ''" ng-mouseenter="isShowSubMenu = true" ng-mouseleave="isShowSubMenu = false">
                                 <a href="#">COMPANY</a>
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu" role="menu" ng-show="isShowSubMenu">
                                     <li><a href="/gifts">Give a Gift</a></li>
                                     <li><a href="/gifted">Redeem a Gift</a></li>
                                     <li><a href="/categories/gifts">View Gifts</a></li>
@@ -187,7 +187,7 @@
         <div class="al-slide-wrap">
             <div class="al-slide-area">
                 <div class="al-slide-info">
-                    <div id="carousel-generic" class="al-carousel carousel slide" data-ride="carousel">
+                    <div id="carousel-generic" class="al-carousel carousel slide">
                         <ol class="carousel-indicators">
                             <li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
                             <li data-target="#carousel-generic" data-slide-to="1"></li>

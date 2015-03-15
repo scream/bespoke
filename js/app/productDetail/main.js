@@ -1,31 +1,39 @@
 define([
     'jquery',
+    'shopCar',
+    'addProduct',
     'jquery-cookie',
     'angular',
     'bootstrap',
-    'angularjs-bootstrap',
-    'shopCar',
-    'addProduct'
-], function($) {
+    'angularjs-bootstrap'
+], function($, ShopCarController, AddProductController) {
     "use strict";
 
-    var prodcutDetail = function(options){
+    var productDetail = function(options){
         this.init.apply(this, arguments);
     };
 
-    prodcutDetail.prototype.init = function(){
+    productDetail.prototype.init = function(){
         var that = this;
         that.collapse();
     };
     
-    prodcutDetail.prototype.collapse = function(){
+    productDetail.prototype.collapse = function(){
         var that = this;
         $('.collapse').collapse()
     };
 
-    var productDetailApp = angular.module('productDetailModule', ['ui.bootstrap', 'shopCarModule', 'addProductModule']);
+    var productDetailApp = angular.module('productDetailModule', ['ui.bootstrap']);
 
+    productDetailApp.controller('ShopCarController', ShopCarController);
+
+    productDetailApp.controller('AddProductController', AddProductController);
+
+    productDetailApp.controller('ShowSubController', function ($scope) {
+
+    });
+    
     angular.bootstrap(document, ['productDetailModule']);
 
-    return prodcutDetail;
+    return productDetail;
 });

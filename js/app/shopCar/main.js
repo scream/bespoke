@@ -1,5 +1,5 @@
 define(['angular', 'jquery-cookie'], function(){
-    var shopCarApp = angular.module('shopCarModule', ['ui.bootstrap']);
+    
     var typeNum = 0;
     $.cookie.json = true;
     var product = $.cookie('product');
@@ -11,7 +11,7 @@ define(['angular', 'jquery-cookie'], function(){
     typeNum = shopCars.length;
     productType = {typeNum: typeNum};
 
-    shopCarApp.controller('ShopCarController', function ($scope) {
+    var shopCarController = function($scope){
         $scope.shopCars = shopCars;
         $scope.productType = productType;
         $scope.isShowShopCar = false;
@@ -41,7 +41,7 @@ define(['angular', 'jquery-cookie'], function(){
         $scope.validate = function(number){
 
         };
-    });
+    };
 
-    return shopCarApp;
+    return shopCarController;
 });

@@ -20,7 +20,7 @@
                             <li class="shop-car dropdown" ng-controller="ShopCarController">
                                 <a href="#" class="dropdown-toggle" ng-disabled="disabled">
                                     <span class="glyphicon glyphicon-shopping-cart"></span>
-                                    <span class="number">{{productType.typeNum}}</span>
+                                    <span class="number" ng-cloak>{{productType.typeNum}}</span>
                                 </a>
                                 <div class="shop-car-list dropdown-menu" role="menu" ng-click="stopPro($event)">
                                     <div class="product-list" ng:show="shopCars.length > 0">
@@ -144,7 +144,7 @@
         		<div class="al-checkout-area">
         			<div class="al-checkout-info">
                         <h6><span class="glyphicon glyphicon-th-list"></span>Checkout List</h6>
-                        <div class="shop-car-list" ng:show="shopCars.length > 0">
+                        <div  ng-cloak class="shop-car-list" ng:show="shopCars.length > 0">
 
                             <div class="al-table">
                                 <div class="al-row">
@@ -162,7 +162,6 @@
                                 <div class="al-row" ng:repeat="product in shopCars">
                                     <div class="img">
                                         <img src="{{product.imgUrl}}" width="100" height="100"/>
-                                        <span>{{product.name}}</span>
                                     </div>
                                     <div class="number">
                                         <input type="text" ng-keyup="validate(product.number)" ng-model="product.number" class="form-control" value="{{product.number}}" />
@@ -182,7 +181,7 @@
                                 <button href="#" class="btn btn-primary" role="button">Check out</button>
                             </div>
                         </div>
-                        <div class="shop-car-empty" ng:show="shopCars.length === 0">
+                        <div  ng-cloak class="shop-car-empty" ng:show="shopCars.length === 0">
                             <div class="alert alert-info" role="alert">
                                 Your shopcars is empty, please go to product list to order.
                             </div>

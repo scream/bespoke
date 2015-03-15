@@ -613,13 +613,13 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
   </file>
 </example>
  */
-.directive('carousel', [function() {
+.directive('carousel1', [function() {
   return {
     restrict: 'EA',
     transclude: true,
     replace: true,
     controller: 'CarouselController',
-    require: 'carousel',
+    require: 'carousel1',
     templateUrl: 'template/carousel/carousel.html',
     scope: {
       interval: '=',
@@ -670,7 +670,7 @@ function CarouselDemoCtrl($scope) {
 </example>
 */
 
-.directive('slide', function() {
+.directive('slide1', function() {
   return {
     require: '^carousel',
     restrict: 'EA',

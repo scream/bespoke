@@ -1,10 +1,11 @@
 define([
     'jquery',
+    'shopCar',
     'angular',
     'bootstrap',
-    'angularjs-bootstrap',
-    'shopCar'
-], function($) {
+    'angularjs-bootstrap'
+    
+], function($, ShopCarController) {
     "use strict";
 
     var alHome = function(options){
@@ -13,18 +14,7 @@ define([
 
     alHome.prototype.init = function(){
         var that = this;
-        that.dropdown();
         that.slide();
-    };
-    
-    alHome.prototype.dropdown = function(){
-        var $menuList = $('.menu-ul-list > li:not(".search")');
-        $menuList.mouseenter(function(){
-            $(this).find('ul').addClass('show');
-        });
-        $menuList.mouseleave(function(){
-            $(this).find('ul').removeClass('show');
-        });
     };
 
     alHome.prototype.slide = function(){
@@ -35,10 +25,13 @@ define([
         })
     };
 
-    var homeApp = angular.module('homeModule', ['ui.bootstrap', 'shopCarModule']);
+    var headerApp = angular.module('homeModule', ['ui.bootstrap']);
+    headerApp.controller('ShopCarController', ShopCarController);
+    headerApp.controller('ShowSubController', function ($scope) {
+
+    });
 
     angular.bootstrap(document, ['homeModule']);
-
     return alHome;
 
 });

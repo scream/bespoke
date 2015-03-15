@@ -284,6 +284,14 @@ body {
   color: #A33030;
   font-weight: bold;
 }
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
 .al-prodcut-detail-wrap {
   width: 100%;
 }

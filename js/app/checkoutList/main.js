@@ -1,11 +1,11 @@
 define([
     'jquery',
+    'shopCar',
     'jquery-cookie',
     'angular',
     'bootstrap',
-    'angularjs-bootstrap',
-    'shopCar'
-], function($) {
+    'angularjs-bootstrap'
+], function($, ShopCarController) {
     "use strict";
 
     var checkoutList = function(options){
@@ -17,8 +17,8 @@ define([
         
     };
 
-    var checkoutListApp = angular.module('checkoutListModule', ['ui.bootstrap', 'shopCarModule']);
-
+    var checkoutListApp = angular.module('checkoutListModule', ['ui.bootstrap']);
+    checkoutListApp.controller('ShopCarController', ShopCarController);
     
     angular.bootstrap(document, ['checkoutListModule']);
 
